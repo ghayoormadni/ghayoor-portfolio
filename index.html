@@ -3,169 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ghayoor | Frontend Developer</title>
-
-<meta name="description" content="Ghayoor - Frontend Developer from Gujranwala Pakistan. Building modern websites and learning AI tools.">
-<meta name="keywords" content="Ghayoor, Frontend Developer, Web Developer Pakistan, HTML CSS JavaScript">
-<meta name="author" content="Ghayoor">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Ghayoor | Portfolio">
-<meta property="og:description" content="Frontend Developer & AI Learner from Pakistan">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourname.netlify.app/">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
+/* BASIC RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 html{scroll-behavior:smooth}
-body{background:#0f2027;color:white;text-align:center;transition:0.4s}
-body.light{background:#f4f4f4;color:#111}
-#tsparticles{position:fixed;width:100%;height:100%;z-index:-1;top:0;left:0}
+body{
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+color:white;text-align:center;position:relative;overflow-x:hidden;transition:0.4s;
+}
+body.light{background:linear-gradient(135deg,#f4f4f4,#c0c0c0);color:#111;}
 
-#progressBar{position:fixed;top:0;left:0;height:4px;background:#38bdf8;width:0%;z-index:2000}
+/* PARTICLES */
+#tsparticles{position:fixed;width:100%;height:100%;top:0;left:0;z-index:-1}
 
-nav{position:fixed;width:100%;top:0;background:rgba(0,0,0,0.7);backdrop-filter:blur(10px);padding:15px 0;z-index:1000}
+/* NAV */
+nav{position:fixed;width:100%;top:0;background:rgba(0,0,0,0.5);padding:15px 0;z-index:1000;transition:0.4s;}
+body.light nav{background:rgba(255,255,255,0.5);}
 nav a{color:white;margin:0 15px;text-decoration:none;font-weight:500;transition:0.3s}
-nav a:hover{color:#38bdf8}
-.toggle-btn{position:absolute;right:20px;top:15px;cursor:pointer}
+body.light nav a{color:#111;}
+nav a:hover{color:#00d4ff}
+.toggle-btn{position:absolute;right:20px;top:15px;cursor:pointer;font-size:20px}
 
-header{padding:120px 20px 80px}
-header h1{font-size:45px}
-header span{color:#38bdf8}
-.cursor{display:inline-block;width:2px;background:#38bdf8;margin-left:5px;animation:blink 1s infinite}
+/* HEADER */
+header{padding:130px 20px 80px}
+header h1{font-size:42px}
+header span{color:#00d4ff}
+header p{margin-top:10px;opacity:0.85;}
+.cursor{display:inline-block;width:2px;background:#00d4ff;margin-left:5px;animation:blink 1s infinite}
 @keyframes blink{0%,50%,100%{opacity:1}25%,75%{opacity:0}}
-header p{margin-top:15px;opacity:0.8}
 
-.resume-btn{
-margin-top:20px;
-display:inline-block;
-padding:12px 25px;
-background:#38bdf8;
-color:black;
-border-radius:8px;
-font-weight:bold;
-text-decoration:none;
-transition:0.3s
-}
-.resume-btn:hover{background:#0ea5e9;color:white;transform:scale(1.1)}
-
+/* SECTIONS */
 section{padding:80px 20px}
-h2{color:#38bdf8;margin-bottom:30px;font-size:32px}
+h2{color:#00d4ff;margin-bottom:30px;font-size:30px}
 
+/* CARDS */
 .card{
-background:rgba(255,255,255,0.08);
+background:rgba(255,255,255,0.05);
 padding:25px;margin:20px auto;
-width:85%;max-width:420px;
-border-radius:15px;transition:0.4s
+width:90%;max-width:900px;border-radius:15px;
+transition:0.4s;backdrop-filter:blur(12px);
 }
-.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.6)}
+body.light .card{background:rgba(255,255,255,0.2);}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,0,0,0.6);}
 
-.skill{text-align:left;margin:20px auto;width:85%;max-width:400px}
-.skill-bar{background:#1e293b;border-radius:20px;overflow:hidden}
-.skill-fill{height:10px;background:#38bdf8;border-radius:20px;width:0}
+/* SKILLS */
+.skill{margin:20px auto;max-width:600px;text-align:left}
+.skill-bar{background:#1e2f3b;border-radius:20px;overflow:hidden;margin-top:5px}
+body.light .skill-bar{background:#ccc;}
+.skill-fill{height:12px;background:#00d4ff;border-radius:20px;width:0;transition:1.5s}
 
-.project-card{position:relative;overflow:hidden}
-.project-card img{width:100%;border-radius:10px;transition:0.5s}
-.project-overlay{
-position:absolute;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.7);
-display:flex;justify-content:center;align-items:center;
-opacity:0;transition:0.5s;border-radius:10px;
-font-weight:bold;color:#38bdf8;font-size:18px
-}
-.project-card:hover img{transform:scale(1.1)}
-.project-card:hover .project-overlay{opacity:1}
+/* PROJECTS */
+.projects-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.project-card{background:rgba(255,255,255,0.05);width:300px;border-radius:15px;overflow:hidden;transition:0.4s}
+body.light .project-card{background:rgba(255,255,255,0.15);}
+.project-card img{width:100%;height:200px;object-fit:cover}
+.project-card:hover{transform:scale(1.05)}
+.project-content{padding:15px}
+.project-content h3{color:#00d4ff;margin-bottom:10px}
 
+/* SERVICES */
+.services-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:30px}
+.service-card{background:rgba(255,255,255,0.05);padding:25px;width:280px;border-radius:15px;transition:0.4s}
+body.light .service-card{background:rgba(255,255,255,0.15);}
+.service-card:hover{transform:scale(1.05);box-shadow:0 15px 35px rgba(0,0,0,0.5)}
+.service-card h3{color:#00d4ff;margin-bottom:10px}
+
+/* TESTIMONIALS */
+.testimonials-container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-top:30px}
+.testimonial-card{background:rgba(255,255,255,0.05);padding:25px;width:300px;border-radius:15px;transition:0.4s;font-style:italic}
+body.light .testimonial-card{background:rgba(255,255,255,0.15);}
+.testimonial-card:hover{transform:scale(1.03);box-shadow:0 15px 35px rgba(0,0,0,0.5)}
+.testimonial-card p{margin-bottom:10px}
+
+/* FORM */
 form{display:flex;flex-direction:column;align-items:center}
-input,textarea{
-width:85%;max-width:400px;
-padding:12px;margin:10px 0;
-border-radius:8px;border:none;outline:none
-}
-button{
-padding:12px 25px;background:#38bdf8;
-border:none;border-radius:8px;
-font-weight:bold;cursor:pointer;transition:0.3s
-}
-button:hover{background:#0ea5e9;color:white;transform:scale(1.05)}
+input,textarea{width:90%;max-width:500px;padding:12px;margin:10px 0;border-radius:8px;border:none;outline:none}
+button{padding:12px 25px;background:#00d4ff;border:none;border-radius:8px;font-weight:bold;cursor:pointer;transition:0.3s}
+button:hover{background:#00a3cc;color:white;transform:scale(1.05)}
 
-footer{padding:30px;background:#000;margin-top:50px;font-size:14px}
+footer{padding:25px;background:#000;margin-top:50px;font-size:14px}
 
-@media(max-width:600px){
-header h1{font-size:30px}
+@media(max-width:700px){
+.projects-container,.services-container,.testimonials-container{flex-direction:column;align-items:center}
 }
 </style>
 </head>
 
 <body>
-
-<div id="progressBar"></div>
 <div id="tsparticles"></div>
 
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#testimonials">Testimonials</a>
 <a href="#contact">Contact</a>
 <span class="toggle-btn" onclick="toggleMode()">🌙</span>
 </nav>
 
 <header>
 <h1>Hi, I'm <span id="typing"></span><span class="cursor"></span></h1>
-<p>Frontend Developer & AI Learner from Gujranwala, Pakistan</p>
-<a href="resume.pdf" class="resume-btn">Download Resume</a>
+<p>Professional Frontend Developer from Pakistan</p>
 </header>
 
-<section id="about" data-aos="fade-up">
+<section id="about">
 <h2>About Me</h2>
-<div class="card">
-Passionate self-taught developer building modern websites, portfolios and business sites. Focused on clean UI and performance.
-</div>
+<div class="card">I build modern responsive websites for businesses and individuals. Focused on performance, clean UI and user experience.</div>
 </section>
 
-<section id="skills" data-aos="fade-up">
+<section id="skills">
 <h2>Skills</h2>
-
-<div class="skill">
-HTML
-<div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-</div>
-
-<div class="skill">
-CSS
-<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-</div>
-
-<div class="skill">
-JavaScript
-<div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-</div>
-
+<div class="skill">HTML (95%)<div class="skill-bar"><div class="skill-fill" data-width="95%"></div></div></div>
+<div class="skill">CSS (92%)<div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div></div>
+<div class="skill">JavaScript (88%)<div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div></div>
+<div class="skill">Web Development (93%)<div class="skill-bar"><div class="skill-fill" data-width="93%"></div></div></div>
+<div class="skill">AI Tools & Automation (85%)<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div></div>
 </section>
 
-<section id="projects" data-aos="fade-up">
+<section id="projects">
 <h2>Projects</h2>
-
-<div class="card project-card">
-<img src="images/portfolio1.jpg" alt="Portfolio">
-<div class="project-overlay">Live Project</div>
+<div class="projects-container">
+<div class="project-card"><img src="images/portfolio.jpg" alt=""><div class="project-content"><h3>Personal Portfolio</h3><p>Modern animated portfolio website.</p></div></div>
+<div class="project-card"><img src="images/business.jpg" alt=""><div class="project-content"><h3>Business Website</h3><p>Responsive business solution.</p></div></div>
+<div class="project-card"><img src="images/todo.jpg" alt=""><div class="project-content"><h3>Todo App</h3><p>Task manager using JavaScript.</p></div></div>
 </div>
-
-<div class="card project-card">
-<img src="images/todoapp.jpg" alt="Todo App">
-<div class="project-overlay">Live Project</div>
-</div>
-
 </section>
 
-<section id="contact" data-aos="fade-up">
-<h2>Contact Me</h2>
+<section id="services">
+<h2>Services</h2>
+<div class="services-container">
+<div class="service-card"><h3>Web Development</h3><p>Modern responsive websites with clean UI.</p></div>
+<div class="service-card"><h3>UI/UX Design</h3><p>User-friendly interface design for web & mobile.</p></div>
+<div class="service-card"><h3>AI Automation</h3><p>AI-based content & task automation solutions.</p></div>
+</div>
+</section>
 
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="services-container">
+  <div class="service-card">
+    <h3>Basic Package</h3>
+    <p>1-page website, responsive design.</p>
+    <strong>$50</strong>
+  </div>
+  <div class="service-card">
+    <h3>Standard Package</h3>
+    <p>Multi-page website, SEO-friendly.</p>
+    <strong>$150</strong>
+  </div>
+  <div class="service-card">
+    <h3>Premium Package</h3>
+    <p>Complete business website + AI tools integration.</p>
+    <strong>$300</strong>
+  </div>
+</div>
+</section>
+
+<section id="testimonials">
+<h2>Testimonials</h2>
+<div class="testimonials-container">
+<div class="testimonial-card"><p>"Amazing work! Delivered exactly what we wanted."</p><strong>- Client A</strong></div>
+<div class="testimonial-card"><p>"Professional and quick response. Highly recommended."</p><strong>- Client B</strong></div>
+<div class="testimonial-card"><p>"Creative solutions with modern design."</p><strong>- Client C</strong></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
 <form action="https://formsubmit.co/ghayoormadni@gmail.com" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
@@ -174,18 +184,38 @@ JavaScript
 <input type="hidden" name="_next" value="https://ghayoor-portfolio.netlify.app/">
 <button type="submit">Send Message</button>
 </form>
-
 </section>
 
-<footer>
-© 2026 Ghayoor | All Rights Reserved
-</footer>
+<footer>© 2026 Ghayoor | All Rights Reserved</footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init();
 
-/* Typing Effect */
+/* PARTICLES */
+tsParticles.load("tsparticles",{
+particles:{
+number:{value:60,density:{enable:true,value_area:800}},
+color:{value:"#00d4ff"},
+shape:{type:"circle"},
+opacity:{value:0.2,random:true},
+size:{value:3,random:true},
+line_linked:{enable:true,color:"#00d4ff",opacity:0.15},
+move:{enable:true,speed:1.5,direction:"none",random:true,straight:false,out_mode:"out",bounce:false}
+},
+interactivity:{events:{onhover:{enable:true,mode:"repulse"},onclick:{enable:true,mode:"push"}},
+modes:{repulse:{distance:100},push:{particles_nb:3}}},
+retina_detect:true
+});
+
+/* SKILLS ANIMATION */
+window.addEventListener("load",()=>{
+document.querySelectorAll(".skill-fill").forEach(el=>{
+el.style.width=el.getAttribute("data-width");
+});
+});
+
+/* TYPING EFFECT */
 const text="Ghayoor 👋";
 let i=0;
 function typing(){
@@ -196,28 +226,10 @@ setTimeout(typing,100);
 }}
 typing();
 
-/* Scroll Progress */
-window.onscroll=function(){
-let winScroll=document.documentElement.scrollTop;
-let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-document.getElementById("progressBar").style.width=(winScroll/height)*100+"%";
-}
+/* DARK/LIGHT TOGGLE */
+function toggleMode(){document.body.classList.toggle("light");}
 
-/* Dark Mode */
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
-/* Skills Animation */
-window.addEventListener("load",()=>{
-document.querySelectorAll(".skill-fill").forEach(el=>{
-el.style.width=el.getAttribute("data-width");
-});
-});
-
-/* Particles */
-tsParticles.load("tsparticles",{particles:{number:{value:60},color:{value:"#38bdf8"},links:{enable:true,color:"#38bdf8"},move:{enable:true,speed:2}}});
+/* SMOOTH SCROLL (already handled by html scroll-behavior) */
 </script>
-
 </body>
 </html>

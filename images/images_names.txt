@@ -1,2 +1,6 @@
 portfolio1.jpg – Portfolio Website
 todoapp.jpg – To-Do App
+portfolio.jpg - Personal Portfolio
+business.jpg - Business Website
+todo.jpg - Todo App
+ai.jpg - AI Content Tool
